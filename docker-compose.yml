@@ -1,17 +1,14 @@
 version: "3"
 services:
   node:
-    image: "node:alpine3.14"
+    build: .
     container_name: "node"
     ports:
-      - "8080:80"
-      - "8088:88"
-      - "8888:8888"
+      - "4567:80"
+      - "3465:8080"
+      - "3333:8000"
     volumes:
-      - "./src:/home/node/app"
-    working_dir: "/home/node/app"
-    environment:
-      NODE_ENV: "production"
+      - ".:/opt/www"
     restart: always
     command:
       - "top"
