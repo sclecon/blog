@@ -1,2 +1,2 @@
-# blog
-Test the Element development project
+# ElementBlog
+Test the Element development Blog project
