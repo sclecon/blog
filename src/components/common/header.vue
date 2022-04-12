@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import TopToolsBar from './topToolsBar.vue';
-import TopNav from './topNav.vue';
+import TopToolsBar from '../header/topToolsBar.vue';
+import TopNav from '../header/topNav.vue';
 
 export default {
-    name: 'CommonHeader',
+    name: 'Header',
     components: {
         TopToolsBar,
         TopNav

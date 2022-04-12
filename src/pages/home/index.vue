@@ -1,10 +1,10 @@
 <template>
-    <div>这是测试页面1</div>
+    <span>这是首页的内容</span>
 </template>
 
 <script>
 export default {
-    name: 'Test1'
+
 }
 </script>
 

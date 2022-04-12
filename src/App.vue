@@ -1,18 +1,14 @@
 <template>
     <div id="app">
-        <button @click="gotoLogin">tiaozhuan</button>
-        <div id="login" v-if="login">
-            <CommonLogin></CommonLogin>
-        </div>
-        <el-container v-else>
+        <el-container>
             <el-header :height="header.height" :style="header.style">
-                <CommonHeader></CommonHeader>
+                <Header></Header>
             </el-header>
             <el-main>
                 <router-view></router-view>
             </el-main>
             <el-footer :height="footer.height" :style="footer.style">
-                <CommonFooter></CommonFooter>
+                <Footer></Footer>
             </el-footer>
         </el-container>
     </div>
@@ -20,15 +16,13 @@
 
 <script>
 import './static/css/common.css';
-import CommonHeader from './components/common/header.vue';
-import CommonFooter from './components/common/footer.vue';
-import CommonLogin from './pages/user/login.vue';
+import Header from './components/common/header.vue';
+import Footer from './components/common/footer.vue';
 export default {
     name: 'App',
     components: {
-        CommonHeader,
-        CommonFooter,
-        CommonLogin
+        Header,
+        Footer
     },
     data(){
         return {
@@ -48,7 +42,7 @@ export default {
             this.$message.success('欢迎使用element的UI组件包');
         },
         gotoLogin(){
-            this.$router.push('/login')
+            this.$message.success('跳转按钮');
         }
     }
 }

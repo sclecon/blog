@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'CommonFooter',
+    name: 'Footer',
     data(){
         return {
             url: 'Element.CoM',
