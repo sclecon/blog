@@ -3,7 +3,7 @@
         <el-input
             placeholder="请输入搜索内容"
             suffix-icon="el-icon-search"
-            v-model="input1">
+            v-model="search">
         </el-input>
     </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     name: 'SearchInput',
     data(){
         return {
-            input1: ''
+            search: ''
         }
     }
 }

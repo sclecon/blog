@@ -18,7 +18,7 @@
                     <li><a href="javascript:;">海天</a></li>
                     <li><a href="javascript:;">深邃</a></li>
                     <li><a href="javascript:;">暗黑</a></li>
-                    <li><a href="javascript:;">自动</a></li>
+                    <li><a href="javascript:;" class="active">自动</a></li>
                 </ul>
             </el-col>
         </el-row>

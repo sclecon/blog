@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div id="login" v-if="login">
-            <span>显示登录页面</span>
+            <CommonLogin></CommonLogin>
         </div>
         <el-container v-else>
             <el-header :height="header.height" :style="header.style">
@@ -10,7 +10,7 @@
             <el-main>
                 <span>主要内容区域</span>
             </el-main>
-            <el-footer>
+            <el-footer :height="footer.height" :style="footer.style">
                 <CommonFooter></CommonFooter>
             </el-footer>
         </el-container>
@@ -21,15 +21,21 @@
 import './static/css/common.css';
 import CommonHeader from './components/common/header.vue';
 import CommonFooter from './components/common/footer.vue';
+import CommonLogin from './pages/user/login.vue';
 export default {
     name: 'App',
     components: {
         CommonHeader,
-        CommonFooter
+        CommonFooter,
+        CommonLogin
     },
     data(){
         return {
             header: {
+                height: 'auto',
+                style: 'padding:0px;',
+            },
+            footer: {
                 height: 'auto',
                 style: 'padding:0px;',
             },
