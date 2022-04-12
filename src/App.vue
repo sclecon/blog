@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <button @click="gotoLogin">tiaozhuan</button>
         <div id="login" v-if="login">
             <CommonLogin></CommonLogin>
         </div>
@@ -8,7 +9,7 @@
                 <CommonHeader></CommonHeader>
             </el-header>
             <el-main>
-                <span>主要内容区域</span>
+                <router-view></router-view>
             </el-main>
             <el-footer :height="footer.height" :style="footer.style">
                 <CommonFooter></CommonFooter>
@@ -45,6 +46,9 @@ export default {
     methods: {
         msg() {
             this.$message.success('欢迎使用element的UI组件包');
+        },
+        gotoLogin(){
+            this.$router.push('/login')
         }
     }
 }
