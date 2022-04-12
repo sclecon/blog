@@ -1,13 +1,13 @@
 <template>
     <div id="app">
         <el-container>
-            <el-header :height="header.height" :style="header.style">
+            <el-header :height="header.height" :style="header.style"  v-if="layout">
                 <Header></Header>
             </el-header>
             <el-main>
                 <router-view></router-view>
             </el-main>
-            <el-footer :height="footer.height" :style="footer.style">
+            <el-footer :height="footer.height" :style="footer.style"  v-if="layout">
                 <Footer></Footer>
             </el-footer>
         </el-container>
@@ -44,6 +44,9 @@ export default {
         gotoLogin(){
             this.$message.success('跳转按钮');
         }
+    },
+    mounted(){
+        console.log(this.layout);
     }
 }
 </script>

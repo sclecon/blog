@@ -1,10 +1,14 @@
 <template>
-    <span>这是首页的内容</span>
+    <el-row class="main">
+        <el-col :span="24">
+            <span>这是默认的首页</span>
+        </el-col>
+    </el-row>
 </template>
 
 <script>
 export default {
-
+    
 }
 </script>
 
