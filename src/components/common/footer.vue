@@ -1,12 +1,10 @@
 <template>
-    <el-footer>
-        <span>底部版权</span>
-    </el-footer>
+    <span>底部版权</span>
 </template>
 
 <script>
 export default {
-    name: 'BlogFooter'
+    name: 'CommonFooter'
 }
 </script>
 
