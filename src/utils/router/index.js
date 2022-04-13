@@ -9,11 +9,18 @@ const routes = [
         component: () => import('@/pages/home/index')
     },
     {
-        path: '/lo',
+        path: '/login',
         component: () => import('@/pages/user/login'),
         meta: {
             title: '请登录您的账号',
             layout: false,
+        }
+    },
+    {
+        path: '/article',
+        component: () => import('@/pages/article/list'),
+        meta: {
+            title: '文章列表页面'
         }
     }
 ]

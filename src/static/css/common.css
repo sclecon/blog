@@ -4,6 +4,6 @@ body{margin: 0px;padding: 0px;}
 
 a{color: #fcfcfc;text-decoration: none;}
 a:hover{color: rgb(143, 255, 255);}
-.active{color: rgb(143, 255, 255);}
+.router-link-active,.active{color: rgb(143, 255, 255);}
 
 .text-align-right{text-align: right;}

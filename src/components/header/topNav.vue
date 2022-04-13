@@ -7,11 +7,7 @@
             </el-col>
             <el-col :span="13">
                 <ul class="navs">
-                    <li><a href="javascript:;" class="active">首页</a></li>
-                    <li><a href="javascript:;">软件</a></li>
-                    <li><a href="javascript:;">文章</a></li>
-                    <li><a href="javascript:;">专题</a></li>
-                    <li><a href="javascript:;">榜单</a></li>
+                    <li v-for="(item, index) in navs" :key="index"><router-link :to="item.to" exact>{{item.name}}</router-link></li>
                 </ul>
             </el-col>
             <el-col :span="6" class="text-align-right">
@@ -27,6 +23,16 @@ export default {
     name: 'TopNav',
     components: {
         SearchInput
+    },
+    data(){
+        return {
+            navs: [
+                {to: '/', name: '首页'},
+                {to: '/article', name: '文章'},
+                {to: '/login', name: '登录'},
+                {to: '/not', name: '404'},
+            ]
+        }
     }
 }
 </script>
