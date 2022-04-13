@@ -1,9 +1,17 @@
 *{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";}
-body{margin: 0px;padding: 0px;}
-.main{max-width: 1200px;margin: auto;}
+body{margin: 0px;padding: 0px;background-color: #111111;color: aliceblue;}
+.main{max-width: 1400px;margin: auto;}
 
 a{color: #fcfcfc;text-decoration: none;}
 a:hover{color: rgb(143, 255, 255);}
 .router-link-active,.active{color: rgb(143, 255, 255);}
 
 .text-align-right{text-align: right;}
+.text-align-center{text-align: center;}
+
+.text-white{color: white;}
+
+.el-card{background-color: #212324;border:1px solid #212324;color: aliceblue;}
+.el-card__body{padding: unset;}
+
+.margin-top-20{margin-top: 20px;}
