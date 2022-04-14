@@ -9,6 +9,14 @@ export default [
             {
                 path: 'index.html',
                 component: () => import('@/pages/home/index')
+            },
+            {
+                path: '404.html',
+                name: 'not_found',
+                component: () => import('@/pages/error/404'),
+                meta: {
+                    title: '404 - 您访问的页面走丢了'
+                }
             }
         ]
     },
@@ -18,7 +26,6 @@ export default [
         component: () => import('@/pages/user/login'),
         meta: {
             title: '请登录您的账号',
-            layout: false,
         }
     },
     {
@@ -38,17 +45,6 @@ export default [
     },
     {
         path: '*',
-        component: Layout,
-        redirect: '404.html',
-        children: [
-            {
-                name: 'not',
-                path: '404.html',
-                component: () => import('@/pages/error/404'),
-                meta: {
-                    title: '404 - 您所访问的页面已走丢'
-                }
-            }
-        ]
+        redirect: "404.html"
     }
 ];

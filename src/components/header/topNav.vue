@@ -30,7 +30,7 @@ export default {
                 {to: {name: 'index'}, name: '首页'},
                 {to: {name: 'article_list'}, name: '文章'},
                 {to: {name: 'user_login'}, name: '登录'},
-                {to: {name: 'not'}, name: '404'},
+                {to: {name: 'not_found'}, name: '404'},
             ]
         }
     }
