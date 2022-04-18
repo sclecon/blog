@@ -12,11 +12,32 @@
                 </el-col>
             </el-row>
         </div>
+        <div class="article-list margin-top-20">
+            <el-row :gutter="30">
+                <el-col :span="16">
+                    <columns 
+                        :title="articles.title" 
+                        :stat="articles.stat"
+                        :icon="articles.icon" 
+                        :navs="articles.navs" 
+                        :callback="articles.callback" 
+                        @articlesNavClick="articlesNavClick"
+                    ></columns>
+                </el-col>
+                <el-col :span="8">
+                    <columns :title="reply.title">这是我写的slot</columns>
+                </el-col>
+            </el-row>
+        </div>
     </div>
 </template>
 
 <script>
+import columns from '@/components/columns.vue';
 export default {
+    components: {
+        columns
+    },
     data(){
         return {
             recommend:[
@@ -24,7 +45,27 @@ export default {
                 {id: 'top2', name: '第二篇推荐文章'},
                 {id: 'top3', name: '第三篇推荐文章'},
                 {id: 'top4', name: '第四篇推荐文章'},
-            ]
+            ],
+            articles: {
+                title: '全部文章',
+                stat: 64,
+                icon: 'el-icon-apple',
+                navs: [
+                    {name: '全部文章', value: 1, default: true},
+                    {name: '新手入门', value: 2, default: false},
+                    {name: '软件教程', value: 3, default: false},
+                    {name: '新闻资讯', value: 3, default: false},
+                ],
+                callback: 'articlesNavClick',
+            },
+            reply: {
+                title: '最新评论'
+            }
+        }
+    },
+    methods: {
+        articlesNavClick(value){
+            this.$message.success('获取到全部文章分类筛选'+value);
         }
     }
 }

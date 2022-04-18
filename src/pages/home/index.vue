@@ -29,7 +29,7 @@
             </el-col>
             <el-col :span="24">
                 <el-row :gutter="20">
-                    <el-col :span="4" :style="'line-height:'+card.height" v-for="index in 12" :key="index" class="margin-top-20">
+                    <el-col :span="4" :style="'line-height:'+card.height" v-for="index in 12" :key="index" class="margin-bottom-20">
                         <el-card :style="'height:'+card.height" class="text-align-center padding-tb-100">软件：{{index}}</el-card>
                     </el-col>
                 </el-row>
@@ -47,8 +47,8 @@
                 ></columns>
             </el-row>
             <div class="main">
-                <el-row :gutter="30" class="margin-top--10 padding-bottom-30">
-                    <el-col :span="12" v-for="index in 6" :key="index" class="margin-top-30">
+                <el-row :gutter="30">
+                    <el-col :span="12" v-for="index in 6" :key="index" class="margin-bottom-30">
                         <el-card class="padding-tb-50 padding-lr-20">
                             这是文章列表页内容
                         </el-card>
