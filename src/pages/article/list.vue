@@ -23,9 +23,15 @@
                         :callback="articles.callback" 
                         @articlesNavClick="articlesNavClick"
                     ></columns>
+                    <div class="article-item margin-bottom-20" v-for="index in 10" :key="index">
+                        <el-card class="padding-tb-20 padding-lr-20 radius-max article-line">这是第{{index}}个文章数据</el-card>
+                    </div>
                 </el-col>
                 <el-col :span="8">
-                    <columns :title="reply.title">这是我写的slot</columns>
+                    <columns :title="reply.title"></columns>
+                    <div class="reply-item margin-bottom-20" v-for="index in 10" :key="index">
+                        <el-card class="padding-tb-20 padding-lr-20 radius-max article-line">这是第{{index}}个文章数据</el-card>
+                    </div>
                 </el-col>
             </el-row>
         </div>

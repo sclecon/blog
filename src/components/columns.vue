@@ -12,8 +12,6 @@
                     </li>
                 </ul>
             </el-col>
-
-                <slot></slot>
             <el-col :span="6" class="text-align-right" v-if="typeof more === 'object'">
                 <router-link :to="more.to" exact v-if="(typeof more.to === 'string' || typeof more.to === 'object') && typeof more.name === 'string'" class="more">{{more.name}}</router-link>
             </el-col>
