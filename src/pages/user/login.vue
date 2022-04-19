@@ -43,7 +43,6 @@ export default {
 </script>
 
 <style>
-    body{background-image: url('https://static.zcool.cn/passport4.0/images/login-tommyp.jpg');background-repeat: no-repeat;background-size: 100% auto;}
     #login .logo{font-size: 40px;font-weight: 500;}
     .login-box{max-width: 400px;margin: 50px auto 0px;padding-top: 0px;}
     .el-menu{background-color: unset;}
