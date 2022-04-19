@@ -40,6 +40,14 @@ export default [
                 meta: {
                     title: '文章列表页面'
                 }
+            },
+            {
+                name: 'article_detail',
+                path: 'detail.html',
+                component: () => import('@/pages/article/detail'),
+                meta: {
+                    title: '文章详情页面'
+                }
             }
         ]
     },

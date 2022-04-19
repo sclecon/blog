@@ -28,8 +28,9 @@ export default {
         return {
             navs: [
                 {to: {name: 'index'}, name: '首页'},
-                {to: {name: 'article_list'}, name: '文章'},
-                {to: {name: 'user_login'}, name: '登录'},
+                {to: {name: 'article_list'}, name: '文章列表'},
+                {to: {name: 'article_detail'}, name: '文章详情'},
+                {to: {name: 'user_login'}, name: '登录注册'},
                 {to: {name: 'not_found'}, name: '404'},
             ]
         }

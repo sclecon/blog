@@ -1,0 +1,7 @@
+@font-face {
+    font-family: Dosis;
+    src: url("@/static/foots/Dosis-VariableFont_wght.ttf");
+}
+*{
+    font-family: Dosis,Open Sans,pingfang SC,helvetica neue,arial,hiragino sans gb,microsoft yahei ui,microsoft yahei,simsun,sans-serif;
+}
