@@ -35,6 +35,7 @@
                 </el-col>
             </el-row>
         </div>
+        <div v-for="conf, index in config" :key="index">{{conf.mark}}={{conf.name}}</div>
     </div>
 </template>
 
@@ -66,13 +67,27 @@ export default {
             },
             reply: {
                 title: '最新评论'
-            }
+            },
+            config: []
         }
     },
     methods: {
         articlesNavClick(value){
             this.$message.success('获取到全部文章分类筛选'+value);
         }
+    },
+    mounted(){
+        let self = this;
+        this.http.request('configlist', {
+            success(data){
+                console.log('自定义的success', data);
+                self.config = data.config;
+            },
+            data: {
+                name: '张三丰'
+            }
+        });
+        this.http.request('configlists', {a: 'b'});
     }
 }
 </script>
