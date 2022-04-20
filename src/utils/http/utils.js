@@ -1,10 +1,7 @@
 import config from '@/config';
 export default {
     getApi(mark){
-        if((mark in config.api.list) === false){
-            return this.error("'"+mark+"' 接口未定义");
-        }
-        return config.api.list[mark];
+        return config.api.list[mark] || false;
     },
     getMethod(api){
         if(typeof api.method === 'string'){
@@ -37,8 +34,24 @@ export default {
             return _error(response.status, '[HTTP请求异常] '+response.statusText, {});
         }
     },
-    error(msg){
-        console.error('[config->api][http] '+msg);
-        return false;
+    validator(validators, data){
+        for(let attr in validators){
+            let validator = validators[attr];
+            let require = validator.require || false;
+            if(require && (attr in data) === false){
+                return `'{{attr}}' 必须传递`;
+            }
+            if(attr in data) {
+                let value = data[attr];
+                console.log(validator.type, 'validator');
+                console.log(value);
+                console.log(typeof value);
+                console.log('123123' instanceof String)
+            }
+        }
+    },
+    error(code, msg, data, error){
+        const _error = typeof error === 'function' ? success : config.api.default.response.error;
+        return _error(code, msg, data);
     }
 }

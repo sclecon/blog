@@ -84,7 +84,7 @@ export default {
                 self.config = data.config;
             },
             data: {
-                name: '张三丰'
+                name: 123
             }
         });
         this.http.request('configlists', {a: 'b'});

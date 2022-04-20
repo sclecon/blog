@@ -5,19 +5,23 @@ import utils from './utils';
 
 const http = {
     request(mark, config={}){
+        const success = config.success || false;
+        const error = config.error || false;
         const api = utils.getApi(mark);
-        if(typeof api === 'object'){
-            const method = utils.getMethod(api);
-            const params = utils.fusionParams(api, config.data || {});
-            const headers = utils.fusionHeaders(api, config.headers || {});
-            const success = config.success || false;
-            const error = config.error || false;
-            switch(method) {
-                case 'GET' :axios.get(api.path, {params, headers}).then(utils.then(success, error));break;
-                case 'POST' :axios.post(api.path, params, {headers}).then(utils.then(success, error));break;
-                case 'PUT' :axios.put(api.path, params, {headers}).then(utils.then(success, error));break;
-                case 'DELETE' :axios.delete(api.path, {params, headers}).then(utils.then(success, error));break;
-            }
+        if(api === false){
+            return utils.error(600, "'"+mark+"' 接口未定义 无法发起请求", {}, error);
+        }
+        const method = utils.getMethod(api);
+        const params = utils.fusionParams(api, config.data || {});
+        const headers = utils.fusionHeaders(api, config.headers || {});
+        const validator = api.validator || {};
+        utils.validator(validator, params);
+        console.log(validator, 'validator');
+        switch(method) {
+            case 'GET' :axios.get(api.path, {params, headers}).then(utils.then(success, error));break;
+            case 'POST' :axios.post(api.path, params, {headers}).then(utils.then(success, error));break;
+            case 'PUT' :axios.put(api.path, params, {headers}).then(utils.then(success, error));break;
+            case 'DELETE' :axios.delete(api.path, {params, headers}).then(utils.then(success, error));break;
         }
     }
 }
