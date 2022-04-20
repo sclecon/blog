@@ -6,7 +6,7 @@
                     <li><a href="javascript:;">装机必备</a></li>
                     <li><a href="javascript:;">提交应用</a></li>
                     <li><a href="javascript:;">留言反馈</a></li>
-                    <li><a href="javascript:;">macOS12兼容性</a></li>
+                    <li><a href="javascript:;">MacOS12兼容性</a></li>
                 </ul>
             </el-col>
             <el-col :span="12" class="text-align-right">
