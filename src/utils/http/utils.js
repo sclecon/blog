@@ -1,4 +1,5 @@
 import config from '@/config';
+import validatorError from './validator';
 export default {
     getApi(mark){
         return config.api.list[mark] || false;
@@ -38,17 +39,21 @@ export default {
         for(let attr in validators){
             let validator = validators[attr];
             let require = validator.require || false;
+            let types = typeof validator.type === 'function' ? [validator.type] : validator.type || [];
             if(require && (attr in data) === false){
-                return `'{{attr}}' 必须传递`;
+                return new validatorError(`'`+attr+`' 参数必须传递`);
+            }
+            if ('default' in validator){
+                data[attr] = data[attr] || validator.default;
             }
             if(attr in data) {
                 let value = data[attr];
-                console.log(validator.type, 'validator');
-                console.log(value);
-                console.log(typeof value);
-                console.log('123123' instanceof String)
+                if(types[0] && types.indexOf(value.constructor) === -1){
+                    return new validatorError(`'`+attr+`' 参数类型错误 当前参数类型为`+value.constructor+', 参数限定类型为'+types);
+                }
             }
         }
+        return data;
     },
     error(code, msg, data, error){
         const _error = typeof error === 'function' ? success : config.api.default.response.error;

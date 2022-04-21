@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import axios from '@/utils/axios';
 import utils from './utils';
+import validatorError from './validator';
 
 
 const http = {
@@ -15,8 +16,10 @@ const http = {
         const params = utils.fusionParams(api, config.data || {});
         const headers = utils.fusionHeaders(api, config.headers || {});
         const validator = api.validator || {};
-        utils.validator(validator, params);
-        console.log(validator, 'validator');
+        const _params = utils.validator(validator, params);
+        if(_params instanceof validatorError){
+            return utils.error(601, _params.getMsg(), {}, error);
+        }
         switch(method) {
             case 'GET' :axios.get(api.path, {params, headers}).then(utils.then(success, error));break;
             case 'POST' :axios.post(api.path, params, {headers}).then(utils.then(success, error));break;

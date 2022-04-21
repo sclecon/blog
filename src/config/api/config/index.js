@@ -7,9 +7,7 @@ export default {
         login: false,
         validator: {
             name: {
-                type: [String],
                 default: '张三丰',
-                require: true
             }
         }
     }

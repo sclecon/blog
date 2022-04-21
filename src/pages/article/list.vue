@@ -82,12 +82,8 @@ export default {
             success(data){
                 console.log('自定义的success', data);
                 self.config = data.config;
-            },
-            data: {
-                name: 123
             }
         });
-        this.http.request('configlists', {a: 'b'});
     }
 }
 </script>
