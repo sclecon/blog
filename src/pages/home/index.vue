@@ -29,8 +29,10 @@
             </el-col>
             <el-col :span="24">
                 <el-row :gutter="20">
-                    <el-col :span="4" :style="'line-height:'+card.height" v-for="index in 12" :key="index" class="margin-bottom-20">
-                        <el-card :style="'height:'+card.height" class="text-align-center padding-tb-100">软件：{{index}}</el-card>
+                    <el-col :span="4" v-for="index in 12" :key="index" class="margin-bottom-20">
+                        <el-card>
+                            <appItem></appItem>
+                        </el-card>
                     </el-col>
                 </el-row>
             </el-col>
@@ -61,9 +63,11 @@
 
 <script>
 import columns from '@/components/columns.vue';
+import appItem from '@/components/apps/item.vue';
 export default {
     components: {
-        columns
+        columns,
+        appItem
     },
     data(){
         return {

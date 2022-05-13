@@ -28,6 +28,8 @@ export default {
         return {
             navs: [
                 {to: {name: 'index'}, name: '首页'},
+                {to: {name: 'app_list'}, name: '软件列表'},
+                {to: {name: 'app_detail'}, name: '软件详情'},
                 {to: {name: 'article_list'}, name: '文章列表'},
                 {to: {name: 'article_detail'}, name: '文章详情'},
                 {to: {name: 'user_login'}, name: '登录注册'},
